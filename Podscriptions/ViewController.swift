@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CloudKit
 
 class ViewController: NSViewController, XMLParserDelegate {
 
@@ -21,6 +22,10 @@ class ViewController: NSViewController, XMLParserDelegate {
     var channelTitle = ""
     var channelDescription = ""
     
+    var recordBeingParsed: CKRecord!
+    var rssFeedBeingParsed = ""
+    var latestEpisode = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,13 +33,19 @@ class ViewController: NSViewController, XMLParserDelegate {
         
         CloudKitDataHelper.getAllPodcasts { (success, results) in
             for result in results {
+                self.recordBeingParsed = result
+                
                 let feedString = result.object(forKey: "rssFeed")! as! String
                 let feedURL = URL(string: feedString)
+                
+                self.rssFeedBeingParsed = feedString
+                self.latestEpisode = result.object(forKey: "latestEpisode")! as! String
+                
                 if let parser = XMLParser(contentsOf: feedURL!) {
                     parser.delegate = self
                     parser.parse()
                 }
-                print("Looking for: \(feedURL!)")
+                print("Finished parsing: \(feedURL!)")
             }
         }
     }
@@ -75,9 +86,21 @@ class ViewController: NSViewController, XMLParserDelegate {
             episode.itunesDuration = episodeDuration
             episode.audioUrl = episodeURL
 
-            // Check first episode title returned against that stored in CloudKit (first will be the latest), update it if you need to, send a notification, then break.
+            // there is a new episode
+            if episode.title != latestEpisode {
+                // update latest episode in CloudKit
+                CloudKitDataHelper.updateLatestEpisode(title: episode.title, record: recordBeingParsed)
+                
+                // get all device tokens subscribed to this podcast
+                CloudKitDataHelper.getAllSubscriptionsFor(podcast: recordBeingParsed)
+                
+                // send notification to subscribed devices
+                
+            } else {
+                print("No new episodes for \(recordBeingParsed.object(forKey: "title") as! String)")
+            }
             
-            parser.abortParsing()
+            parser.abortParsing() // stop parsing after first item
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE81E27F203B786300ED32B0 /* CloudKitDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81E27E203B786300ED32B0 /* CloudKitDataHelper.swift */; };
 		BECC7A58203AB4BD00700BC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A57203AB4BD00700BC7 /* AppDelegate.swift */; };
 		BECC7A5A203AB4BD00700BC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A59203AB4BD00700BC7 /* ViewController.swift */; };
 		BECC7A5C203AB4BD00700BC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BECC7A5B203AB4BD00700BC7 /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		BECC7A6B203AB4BD00700BC7 /* PodscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A6A203AB4BD00700BC7 /* PodscriptionsTests.swift */; };
 		BECC7A76203AB4BD00700BC7 /* PodscriptionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A75203AB4BD00700BC7 /* PodscriptionsUITests.swift */; };
 		BECC7A85203AB4CE00700BC7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECC7A84203AB4CE00700BC7 /* CloudKit.framework */; };
-		BECC7A87203AB4F900700BC7 /* CloudKitDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */; };
 		BECC7A89203AB6B800700BC7 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A88203AB6B800700BC7 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE81E27E203B786300ED32B0 /* CloudKitDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitDataHelper.swift; sourceTree = "<group>"; };
 		BECC7A54203AB4BD00700BC7 /* Podscriptions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podscriptions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECC7A57203AB4BD00700BC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECC7A59203AB4BD00700BC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		BECC7A75203AB4BD00700BC7 /* PodscriptionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodscriptionsUITests.swift; sourceTree = "<group>"; };
 		BECC7A77203AB4BD00700BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECC7A84203AB4CE00700BC7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitDataHelper.swift; path = ../../SubscripCron/SubscripCron/CloudKitDataHelper.swift; sourceTree = "<group>"; };
 		BECC7A88203AB6B800700BC7 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +104,7 @@
 		BECC7A56203AB4BD00700BC7 /* Podscriptions */ = {
 			isa = PBXGroup;
 			children = (
-				BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */,
+				BE81E27E203B786300ED32B0 /* CloudKitDataHelper.swift */,
 				BECC7A57203AB4BD00700BC7 /* AppDelegate.swift */,
 				BECC7A59203AB4BD00700BC7 /* ViewController.swift */,
 				BECC7A5B203AB4BD00700BC7 /* Assets.xcassets */,
@@ -286,7 +286,7 @@
 				BECC7A5A203AB4BD00700BC7 /* ViewController.swift in Sources */,
 				BECC7A89203AB6B800700BC7 /* Episode.swift in Sources */,
 				BECC7A58203AB4BD00700BC7 /* AppDelegate.swift in Sources */,
-				BECC7A87203AB4F900700BC7 /* CloudKitDataHelper.swift in Sources */,
+				BE81E27F203B786300ED32B0 /* CloudKitDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

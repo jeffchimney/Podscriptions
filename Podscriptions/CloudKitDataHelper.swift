@@ -34,5 +34,24 @@ class CloudKitDataHelper {
             }
         })
     }
+    
+    static func updateLatestEpisode(title: String, record: CKRecord) {
+        let container = CKContainer(identifier: "iCloud.com.JeffsApps.Podwise")
+        let publicDB: CKDatabase = container.publicCloudDatabase
+        
+        record.setObject(title as CKRecordValue, forKey: "latestEpisode")
+        
+        publicDB.save(record) { (savedRecord, error) in
+            if error == nil {
+                print("Updated latest episode for \(String(describing: savedRecord))")
+            } else {
+                print("Failed to save")
+            }
+        }
+    }
+    
+    static func getAllSubscriptionsFor(podcast: CKRecord) {
+        
+    }
 }
 
