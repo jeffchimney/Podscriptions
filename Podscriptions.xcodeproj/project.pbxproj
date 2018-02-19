@@ -13,6 +13,9 @@
 		BECC7A5F203AB4BD00700BC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECC7A5D203AB4BD00700BC7 /* Main.storyboard */; };
 		BECC7A6B203AB4BD00700BC7 /* PodscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A6A203AB4BD00700BC7 /* PodscriptionsTests.swift */; };
 		BECC7A76203AB4BD00700BC7 /* PodscriptionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A75203AB4BD00700BC7 /* PodscriptionsUITests.swift */; };
+		BECC7A85203AB4CE00700BC7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECC7A84203AB4CE00700BC7 /* CloudKit.framework */; };
+		BECC7A87203AB4F900700BC7 /* CloudKitDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */; };
+		BECC7A89203AB6B800700BC7 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC7A88203AB6B800700BC7 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		BECC7A71203AB4BD00700BC7 /* PodscriptionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodscriptionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECC7A75203AB4BD00700BC7 /* PodscriptionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodscriptionsUITests.swift; sourceTree = "<group>"; };
 		BECC7A77203AB4BD00700BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BECC7A84203AB4CE00700BC7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitDataHelper.swift; path = ../../SubscripCron/SubscripCron/CloudKitDataHelper.swift; sourceTree = "<group>"; };
+		BECC7A88203AB6B800700BC7 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECC7A85203AB4CE00700BC7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +87,7 @@
 				BECC7A69203AB4BD00700BC7 /* PodscriptionsTests */,
 				BECC7A74203AB4BD00700BC7 /* PodscriptionsUITests */,
 				BECC7A55203AB4BD00700BC7 /* Products */,
+				BECC7A83203AB4CE00700BC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,12 +104,14 @@
 		BECC7A56203AB4BD00700BC7 /* Podscriptions */ = {
 			isa = PBXGroup;
 			children = (
+				BECC7A86203AB4F900700BC7 /* CloudKitDataHelper.swift */,
 				BECC7A57203AB4BD00700BC7 /* AppDelegate.swift */,
 				BECC7A59203AB4BD00700BC7 /* ViewController.swift */,
 				BECC7A5B203AB4BD00700BC7 /* Assets.xcassets */,
 				BECC7A5D203AB4BD00700BC7 /* Main.storyboard */,
 				BECC7A60203AB4BD00700BC7 /* Info.plist */,
 				BECC7A61203AB4BD00700BC7 /* Podscriptions.entitlements */,
+				BECC7A88203AB6B800700BC7 /* Episode.swift */,
 			);
 			path = Podscriptions;
 			sourceTree = "<group>";
@@ -122,6 +132,14 @@
 				BECC7A77203AB4BD00700BC7 /* Info.plist */,
 			);
 			path = PodscriptionsUITests;
+			sourceTree = "<group>";
+		};
+		BECC7A83203AB4CE00700BC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BECC7A84203AB4CE00700BC7 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +211,14 @@
 					BECC7A53203AB4BD00700BC7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					BECC7A65203AB4BD00700BC7 = {
 						CreatedOnToolsVersion = 9.2;
@@ -258,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BECC7A5A203AB4BD00700BC7 /* ViewController.swift in Sources */,
+				BECC7A89203AB6B800700BC7 /* Episode.swift in Sources */,
 				BECC7A58203AB4BD00700BC7 /* AppDelegate.swift in Sources */,
+				BECC7A87203AB4F900700BC7 /* CloudKitDataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
